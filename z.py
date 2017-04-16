@@ -1,4 +1,22 @@
-class Solution(object):
+class ZAlgorithm(object):
+
+    def longestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        z = [0 for _ in range(len(s))]
+        L, R = 0, 1
+        for i in range(1, len(s)):
+            if R <= i or z[i - L] >= R - i:
+                z[i] = (z[i - L] if i + z[i - L] < R else R - i) if R > i else 0
+                while i + z[i] < len(s) and s[i + z[i]] == s[z[i]]:
+                    z[i] += 1
+                if i + z[i] > R:
+                    L, R = i, i + z[i]
+            else:
+                z[i] = z[i - L]
+        return z
 
     def longestPalindrome(self, s):
         """
@@ -28,3 +46,6 @@ class Solution(object):
                     center = idx // 2
                     mlen = (mlen - 1) // 2
                     return s[center - mlen: center + mlen]
+
+zfunc = ZAlgorithm()
+print(zfunc.longestSubstring('abaabaab'))
