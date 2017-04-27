@@ -86,13 +86,15 @@ class SegmentTree(object):
 
 
 
-fst = SegmentTree([4, 1, 2, 5, 3, 3])
-print(fst.sumRange(2, 5))
-fst.rangeUpdate(3, 5, 4)
-print(f'query 2, 5 {fst.sumRange(2, 5)}')
-print(f'query 3, 4 {fst.sumRange(3, 4)}')
-print(fst.sumRange(3, 3))
-print(fst.sumRange(4, 4))
-print(fst.sumRange(5, 5))
+
+
+# fst = SegmentTree([4, 1, 2, 5, 3, 3])
+# print(fst.sumRange(2, 5))
+# fst.rangeUpdate(3, 5, 4)
+# print(f'query 2, 5 {fst.sumRange(2, 5)}')
+# print(f'query 3, 4 {fst.sumRange(3, 4)}')
+# print(fst.sumRange(3, 3))
+# print(fst.sumRange(4, 4))
+# print(fst.sumRange(5, 5))
 # fst.update(6, -2)
 # print(fst.query(2, 9))
